@@ -14,15 +14,8 @@ public class B_TestWithElementLocatorsChapter {
     private static String baseUrl = "https://the-internet.herokuapp.com/";
     private static String sauceDemoBaseUrl = "";
 
-//    public static void main(String[] args) throws InterruptedException {
-//
-//        B_TestWithElementLocatorsChapter test = new B_TestWithElementLocatorsChapter();
-//        test.sampleSetupAndTests();
-//        test.sampleTestWithFindElementsPlural();
-//    }
-
     @BeforeAll
-    public static void setupChromeDriverAndBaseUrl() {
+    public static void setupChromeDriverAndBaseUrl() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get(baseUrl);
@@ -66,7 +59,7 @@ public class B_TestWithElementLocatorsChapter {
 
     @Test
     @DisplayName("Test: Assignment Exercises - Shifting Content")
-    void testExercise(){
+    public void testExercise(){
 
         WebElement shiftingContentLink = driver.findElement(By.linkText("Shifting Content"));
         shiftingContentLink.click();
