@@ -1,4 +1,4 @@
-package base;
+package testScenarios;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -12,7 +12,6 @@ public class B_TestWithElementLocatorsChapter {
 
     private static WebDriver driver;
     private static String baseUrl = "https://the-internet.herokuapp.com/";
-    private static String sauceDemoBaseUrl = "";
 
     @BeforeAll
     public static void setupChromeDriverAndBaseUrl() throws InterruptedException {
