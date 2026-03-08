@@ -34,13 +34,15 @@ public class LoginTests extends BaseTests {
 
     @Test
     @DisplayName("TEST 2: Verify Dropdown elements.")
-    public void testDropDown(){
-         DropdownPage dropdownPage = homepage.clickDropDownLink();
-         dropdownPage.clickDropDownBar();
-         dropdownPage.selectDropDown("Option 1");
-         dropdownPage.getSelectedOption();
+    public void testDropDown() {
+        DropdownPage dropdownPage = homepage.clickDropDownLink();
+        dropdownPage.clickDropDownBar();
+        dropdownPage.selectDropDown("Option 1");
+        dropdownPage.getSelectedOption();
+
+        boolean isSelectedOption = dropdownPage.selectedOptionTrue();
+        Assertions.assertTrue(isSelectedOption, "Failed: Dropdown option is NOT displayed.");
+
+        //End of Class
     }
-
-
-    //End of Class
 }

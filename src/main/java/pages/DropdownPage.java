@@ -12,6 +12,7 @@ public class DropdownPage {
 
     private WebDriver driver;
     private By dropDownBar = By.id("dropdown");
+    private By selectedOption = By.xpath("//option[contains(@selected,'selected')]");
 
     public DropdownPage(WebDriver driver){
         this.driver = driver;
@@ -20,7 +21,6 @@ public class DropdownPage {
     public void clickDropDownBar(){
         driver.findElement(dropDownBar).click();
     }
-
 
     public void selectDropDown(String option){
         Select dropDownElement = new Select(driver.findElement(dropDownBar));
@@ -36,6 +36,11 @@ public class DropdownPage {
     private Select findDropDownElement(){
         return new Select(driver.findElement(dropDownBar));
     }
+
+    public boolean selectedOptionTrue(){
+      return driver.findElement(selectedOption).isSelected();
+    }
+
 
     //End of Class
 }
