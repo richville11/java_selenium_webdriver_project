@@ -4,6 +4,7 @@ import base.BaseTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.DropdownPage;
 import pages.LoginPage;
 import pages.SecureAreaPage;
 
@@ -30,4 +31,16 @@ public class LoginTests extends BaseTests {
                 "Failed: SecureArea Page Text is NOT found.");
 
     }
+
+    @Test
+    @DisplayName("TEST 2: Verify Dropdown elements.")
+    public void testDropDown(){
+         DropdownPage dropdownPage = homepage.clickDropDownLink();
+         dropdownPage.clickDropDownBar();
+         dropdownPage.selectDropDown("Option 1");
+         dropdownPage.getSelectedOption();
+    }
+
+
+    //End of Class
 }

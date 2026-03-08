@@ -21,14 +21,18 @@ public class BaseTests {
 
     @BeforeAll
     public static void setupChromeDriverAndBaseUrl() throws InterruptedException {
-
-        //path to the chromedriver
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        /**
+         *     "path to the chromedriver"
+         *     "System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");"
+         * No need for the code above because selenium 4.41 (and above) detects the local Chrome version & fetches the matching driver automatically.
+         * No need to download chromedriver.exe as well.
+         */
 
         // 1. Initialize ChromeOptions
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito"); //bypasses all password manager logic (because of the chrome password pop-up issue)
 
+        //enough to dectect local chrome version and fetches the matching driver.
         //Initialize the driver with the options
         driver = new ChromeDriver(options);
         driver.get(baseUrl);
@@ -39,7 +43,7 @@ public class BaseTests {
 
     @AfterAll
     public static void closeBrowser() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         driver.quit();
     }
 
