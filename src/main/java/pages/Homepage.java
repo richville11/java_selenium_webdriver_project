@@ -30,9 +30,21 @@ public class Homepage {
     }
 
 
+    public HoversPage clickhoversPage(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
 
 
+    public KeyPressesPage clickKeyPressesPage(){
+        clickLink("Key Presses");
+        return new KeyPressesPage(driver);
+    }
 
+    public HorizontalSliderPage clickHorizontalSliderPage(){
+        clickLink("Horizontal Slider");
+        return new HorizontalSliderPage(driver);
+    }
 
     //End Class
 }
